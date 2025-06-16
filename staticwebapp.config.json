@@ -38,9 +38,6 @@
     },
     "404": {
       "rewrite": "Not-Found.html"
-    },
-    "405": {
-      "rewrite": "Not-For-You.html"
     }
   },
   "globalHeaders": {
