@@ -7,7 +7,7 @@ html,body{
     margin:0;
     padding:0;
     font-family:'Montserrat', sans serrif;
-    background-color: #f5f8fa;
+    background-color: #ffffff;
     color:#1b96c8;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -17,30 +17,35 @@ html,body{
     display:flex;
     justify-content:center;
     align-items: center;
-    padding:10px,20px;
+    padding:5px,5px;
+    height:10%;
     background-color: #ffffff;
     color:#1b96c8;
 }
 
 .logo img{
-    width:17.5%;
-    height:auto;
+    height:10%;
+    width:auto;
+    position:absolute;
+    top:0.5%;
+    right:1%;
 }
 
 .title{
     font-size:5vh;
     font-weight:600;
     position:absolute;
+    top:0%;
     left:32%;
 }
 
 .nav {
     overflow:visible;
-    position:sticky;
+    position:absolute;
     text-wrap-mode: nowrap;
-    top:10px;
-    right:5%;
-    width:30%;
+    top:0%;
+    left:1%;
+    width:15%;
     height:10%;
 }
 
@@ -55,14 +60,15 @@ html,body{
 
 .navlist li{
     position:relative;
-    margin-left:40px;
+    margin-left:20px;
 }
 
 .navlist > li > a{
     display: block;
+    right:1%;
     color:#1b96c8;
     text-decoration: none;
-    font-size: 2vh;
+    font-size: 4vh;
     text-wrap-mode:nowrap;
     font-weight:600;
     transition: color 0.3s;
@@ -76,16 +82,15 @@ html,body{
     display: none;
     position:absolute;
     list-style-type: disc;
-    background-color: #f5f8fa;
+    background-color: #bebebe;
     color:#1b96c8;
     font-weight:600;
-    transition-duration: 0.3s;
-
+    z-index: 1000;
 }
 
 .dropdown-menu li a {
     color:#1b96c8;
-    background-color: #f5f8fa;
+    background-color: #bebebe;
     padding:10px,10px;
     text-decoration: none;
     display: block;
@@ -100,8 +105,13 @@ html,body{
 }
 
 .main{
+    display: block;
+    position:absolute;
+    top:10%;
     align-items: center;
     min-height:80vh;
+    min-width: 100%;
+    background-color: #f5f8fa;
 }
 
 .decal img{
@@ -111,7 +121,7 @@ html,body{
 
 .intro-title{
     color:#1b96c8;
-    font-size:30px;
+    font-size:35px;
     font-weight:600px;
     text-align:center;
 }
