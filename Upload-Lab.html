@@ -10,7 +10,7 @@
             <div class="logo">
                 <img src="Assets/images/Pure-_-Dark-Blue.png" alt="Pure Environmental Pty Ltd"/>
 			</div>
-            <h1 class="title">You're Looking For... What?</h1>
+            <h1 class="title">Laboratory Data Upload</h1>
 			<!-- Nav -->
 			<nav class="nav">
 				<ul class="navlist">
@@ -30,8 +30,12 @@
             <div class="decal">
                 <img src="Assets/images/Horizontal_Decal.png" alt="PureNV-Decal"/>
             </div>
-            <h2 class="big-404">404: Page Not Found</h2>
-            <h4 class="small-404">We couldn't take you to the page you're looking for. If the issue persists, please contact the system administrator.</h4>
+            <h3 class="upload-text">To upload lab data, just upload the file into the box below, then hit the 'Submit' button. Don't worry, I'll take care of the rest.</h3>
+            <div class="drop-area" id="drop-zone">Drop your excel file here, or click to search for it.</div>
+            <input class="uploader" type="file" id="file-input" accept=".xlsx,.xls,.csv,.xls" />
+            <pre class="output" id="output"></pre>
+
+            <script src="api/getdata/upload-script.js"></script>
         </div>
         <footer class="footer">
             <p class="footertext">Got a recommendation or a problem that needs solving? Contact us <a class="cont-lk" onclick="href='Contact.html'">here!</a></p>

@@ -11,6 +11,12 @@
           "text-wrap-mode: nowrap"
         ]
       }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
     ]
   }
 }
