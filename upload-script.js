@@ -42,7 +42,15 @@ async function uploadFile(file) {
       body: formData
     });
 
-    const data = await response.json();
+    const text = await response.text(); //reading first as text
+    let data;
+
+    try {
+      data=JSON.parse(text);
+    } catch (e) {
+      throw new Error("Invalid JSON Response: " + text);
+    }
+    
     output.textContent = JSON.stringify(data, null, 2);
   } catch (err) {
     output.textContent = "Error: " + err.message;
