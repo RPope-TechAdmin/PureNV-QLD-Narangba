@@ -45,5 +45,8 @@
   },
   "mimeTypes": {
     ".json": "text/json"
+  },
+  "platform": {
+    "apiRuntime": "python:3.8"
   }
 }
