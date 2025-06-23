@@ -2,6 +2,11 @@ const dropZone = document.getElementById('drop-zone');
 const fileInput = document.getElementById('file-input');
 const output = document.getElementById('output');
 
+console.log("Status:", response.status);
+console.log("Content-Type:", response.headers.get("Content-Type"));
+console.log("Raw response:", text);
+
+
 dropZone.addEventListener('click', () => fileInput.click());
 
 dropZone.addEventListener('dragover', (e) => {
