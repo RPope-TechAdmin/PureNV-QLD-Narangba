@@ -37,7 +37,7 @@ async function uploadFile(file) {
   output.textContent = "Uploading...";
 
   try {
-    const response = await fetch('/api/getdata', {
+    const response = await fetch('/api/get_lab', {
       method: 'POST',
       body: formData
     });
