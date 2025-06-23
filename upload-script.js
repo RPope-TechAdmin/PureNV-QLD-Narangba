@@ -43,8 +43,9 @@ async function uploadFile(file) {
     });
 
     const text = await response.text(); //reading first as text
-    let data;
+    console.log("Raw response from server:", text);
 
+    let data;
     try {
       data=JSON.parse(text);
     } catch (e) {
