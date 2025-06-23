@@ -17,7 +17,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         in_memory_file = io.BytesIO(file.read())
         df = pd.read_excel(in_memory_file)
 
-        # Optional filtering — change to suit your data
+        # Optional filtering logic
         if 'Status' in df.columns:
             filtered = df[df['Status'] == 'Active']
         else:
