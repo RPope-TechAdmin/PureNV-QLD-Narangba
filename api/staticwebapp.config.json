@@ -1,7 +1,7 @@
 {
   "trailingSlash": "auto",
   "routes": [
-    {"route":"static",
+    {"route":"/",
       "allowedRoles": ["authenticated"]
     },
     {
@@ -22,8 +22,8 @@
     }
   ],
   "navigationFallback": {
-    "rewrite": "/static/Index.html",
-    "exclude": ["static/Assets/*.{png,jpg,gif}", "/css/*"]
+    "rewrite": "/Index.html",
+    "exclude": ["Assets/*.{png,jpg,gif}", "/css/*"]
   },
   "responseOverrides": {
     "400": {
