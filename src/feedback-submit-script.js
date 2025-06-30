@@ -2,7 +2,7 @@
 const msalConfig = {
   auth: {
     clientId: "bce610d8-2607-48f3-b6e2-fd9acef2732d",
-    authority: "https://login.microsoftonline.com/655e497b-f0e8-44ed-98fb-77680dd02944/",
+    authority: "https://sts.windows.net/655e497b-f0e8-44ed-98fb-77680dd02944/",
     redirectUri: "https://victorious-pond-02e3be310.2.azurestaticapps.net/" // ensures redirect returns here
   }
 };
@@ -84,7 +84,6 @@ async function sendFeedback(name, feedback) {
 
     const res = await fetch("https://purenv-narangba-backend-dqcff9bvbzemeyf0.australiaeast-01.azurewebsites.net/api/feedback", {
       method: "POST",
-      credentials: "include",
       headers: {
         "Authorization": `Bearer ${token}`,
         "Content-Type": "application/json",
