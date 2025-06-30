@@ -26,7 +26,7 @@
     },
     {
       "route": "/api/*",
-      "rewrite": "https://purenv-qld-narangba-backend-g7g7grhjfbhscrb3.australiaeast-01.azurewebsites.net/*",
+      "rewrite": "https://purenv-narangba-backend-dqcff9bvbzemeyf0.australiaeast-01.azurewebsites.net/*",
       "allowedRoles": ["authenticated"],
       "headers": {
       "Access-Control-Allow-Origin": "*",
