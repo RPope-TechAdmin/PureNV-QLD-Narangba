@@ -1,7 +1,7 @@
 // ----- MSAL Configuration -----
 const msalConfig = {
   auth: {
-    clientId: "786eb351-0a19-407d-84fc-3d29126960e8",
+    clientId: "6ed5a94d-6e2f-4804-bf2a-01db3e8027fc",
     authority: "https://login.microsoftonline.com/655e497b-f0e8-44ed-98fb-77680dd02944/",
     redirectUri: "https://victorious-pond-02e3be310.2.azurestaticapps.net/" // ensures redirect returns here
   }
