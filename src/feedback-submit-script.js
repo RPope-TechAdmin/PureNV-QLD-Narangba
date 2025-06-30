@@ -3,13 +3,13 @@ const msalConfig = {
   auth: {
     clientId: "786eb351-0a19-407d-84fc-3d29126960e8",
     authority: "https://login.microsoftonline.com/655e497b-f0e8-44ed-98fb-77680dd02944/",
-    redirectUri: "https://calm-smoke-0485c311e.2.azurestaticapps.net/" // ensures redirect returns here
+    redirectUri: "https://victorious-pond-02e3be310.2.azurestaticapps.net/" // ensures redirect returns here
   }
 };
 
 const loginRequest = {
   scopes: [
-    "api://bce610d8-2607-48f3-b6e2-fd9acef2732d/user_impersonation",
+    "api://162019e9-1091-4c41-8ab4-a5b00bdbf1fe/user_impersonation",
     "openid",
     "profile",
     "offline_access"]
