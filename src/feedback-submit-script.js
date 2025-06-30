@@ -1,7 +1,7 @@
 // ----- MSAL Configuration -----
 const msalConfig = {
   auth: {
-    clientId: "162019e9-1091-4c41-8ab4-a5b00bdbf1fe",
+    clientId: "bce610d8-2607-48f3-b6e2-fd9acef2732d",
     authority: "https://login.microsoftonline.com/655e497b-f0e8-44ed-98fb-77680dd02944/",
     redirectUri: "https://victorious-pond-02e3be310.2.azurestaticapps.net/" // ensures redirect returns here
   }
@@ -9,7 +9,7 @@ const msalConfig = {
 
 const loginRequest = {
   scopes: [
-    "api://162019e9-1091-4c41-8ab4-a5b00bdbf1fe/user_impersonation",
+    "api://bce610d8-2607-48f3-b6e2-fd9acef2732d/user_impersonation",
     "openid",
     "profile",
     "offline_access"]
