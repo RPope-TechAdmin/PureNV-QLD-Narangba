@@ -84,6 +84,7 @@ async function sendFeedback(name, feedback) {
 
     const res = await fetch("https://purenv-narangba-backend-dqcff9bvbzemeyf0.australiaeast-01.azurewebsites.net/api/feedback", {
       method: "POST",
+      credentials: "include",
       headers: {
         "Authorization": `Bearer ${token}`,
         "Content-Type": "application/json",
