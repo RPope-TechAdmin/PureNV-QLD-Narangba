@@ -55,8 +55,7 @@ async function getAccessToken() {
       ...loginRequest,
       account: accounts[0]
     });
-    return result.accessToken,
-    console.log(accessToken);
+    return result.accessToken;
   } catch (e) {
     console.warn("Silent failed, trying popup...");
     try {
@@ -79,6 +78,8 @@ async function sendFeedback(name, feedback) {
     showError("Authentication Failed, No Token Received.")
     return;
   }
+  
+  console.log("[Submit] Token:", token);
 
     const res = await fetch("https://purenv-qld-narangba-backend-g7g7grhjfbhscrb3.australiaeast-01.azurewebsites.net/api/feedback", {
       method: "POST",
