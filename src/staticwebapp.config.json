@@ -2,28 +2,42 @@
   "trailingSlash": "auto",
   "routes": [
     {"route":"/",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["authenticated","admin_1"]
     },
     {
       "route": "index.html*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["authenticated","admin_1"]
     },
     {
       "route": "Information.html*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["authenticated","admin_1"]
     },
     {
       "route": "Lab-Data.html*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["technical","higher-up","admin_1"]
     },
     {
       "route": "Contact.html*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["authenticated","admin_1"]
+    },
+    {
+      "route": "Upload-Lab.html*",
+      "allowedRoles": ["technical","higher-up","admin_1"]
+    },
+    {
+      "route": "/api/*",
+      "rewrite": "https://purenv-qld-api-backend-e3arg4gsc4g9fbd4.australiaeast-01.azurewebsites.net/*",
+      "allowedRoles": ["authenticated"],
+      "headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      "Access-Control-Allow-Headers": "*"
+      }
     }
   ],
   "navigationFallback": {
     "rewrite": "/Index.html",
-    "exclude": ["Assets/*.{png,jpg,gif}", "/css/*"]
+    "exclude": ["Assets/*.{png,jpg,gif}", "/css/*","/js/*","/api/*"]
   },
   "responseOverrides": {
     "400": {
@@ -41,7 +55,8 @@
     }
   },
   "globalHeaders": {
-    "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
+  "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'",
+  "Access-Control-Allow-Origin": "*"
   },
   "mimeTypes": {
     ".json": "text/json"
