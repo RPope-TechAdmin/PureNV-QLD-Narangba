@@ -9,7 +9,7 @@ const msalConfig = {
 
 const loginRequest = {
   scopes: [
-    "api://6ed5a94d-6e2f-4804-bf2a-01db3e8027fc/user_impersonation",
+    "api://162019e9-1091-4c41-8ab4-a5b00bdbf1fe/user_impersonation",
     "openid",
     "profile",
     "offline_access"]
@@ -68,11 +68,14 @@ async function getAccessToken() {
   }
 }
 
+    console.log(accessToken);
+
 // ----- Submit Feedback -----
 async function sendFeedback(name, feedback) {
   const token = await getAccessToken();
   if (!token) {
     console.error("No Token Available")
+    showError("Authentication Failed, No Token Received.")
     return;
   }
 
