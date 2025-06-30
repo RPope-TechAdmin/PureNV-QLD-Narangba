@@ -1,7 +1,7 @@
 // ----- MSAL Configuration -----
 const msalConfig = {
   auth: {
-    clientId: "6ed5a94d-6e2f-4804-bf2a-01db3e8027fc",
+    clientId: "162019e9-1091-4c41-8ab4-a5b00bdbf1fe",
     authority: "https://login.microsoftonline.com/655e497b-f0e8-44ed-98fb-77680dd02944/",
     redirectUri: "https://victorious-pond-02e3be310.2.azurestaticapps.net/" // ensures redirect returns here
   }
@@ -79,7 +79,8 @@ async function sendFeedback(name, feedback) {
     return;
   }
   
-  console.log("[Submit] Token:", token);
+  const decodedToken = JSON.parse(atob(token.split('.')[1]));
+  console.log("🪪 Decoded Token Claims:", decodedToken);
 
     const res = await fetch("https://purenv-qld-narangba-backend-g7g7grhjfbhscrb3.australiaeast-01.azurewebsites.net/api/feedback", {
       method: "POST",
