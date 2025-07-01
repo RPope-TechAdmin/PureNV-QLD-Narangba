@@ -27,7 +27,7 @@
     {
       "route": "/api/*",
       "rewrite": "https://purenv-narangba-backend-dqcff9bvbzemeyf0.australiaeast-01.azurewebsites.net/*",
-      "allowedRoles": ["authenticated"],
+      "allowedRoles": ["anonymous"],
       "headers": {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
