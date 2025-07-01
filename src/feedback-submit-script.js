@@ -82,7 +82,7 @@ async function sendFeedback(name, feedback) {
   const decodedToken = JSON.parse(atob(token.split('.')[1]));
   console.log("🪪 Decoded Token Claims:", decodedToken);
 
-    const res = await fetch("https://purenv-narangba-backend-dqcff9bvbzemeyf0.australiaeast-01.azurewebsites.net/api/feedback?code=${secrets.FUNC_APP_KEY}", {
+    const res = await fetch("https://purenv-narangba-backend-dqcff9bvbzemeyf0.australiaeast-01.azurewebsites.net/api/feedback?code=${process.env.FUNC_APP_KEY}", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${token}`,
