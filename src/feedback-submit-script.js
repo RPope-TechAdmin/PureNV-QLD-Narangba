@@ -9,7 +9,7 @@ const msalConfig = {
 
 const loginRequest = {
   scopes: [
-    "api://dc94dd83-ded3-4908-8f4d-1f8fa323abf7/user_impersonation",
+    "api://87cbd10b-1303-4056-a899-27bd61691211/user_impersonation",
     "openid",
     "profile",
     "offline_access"]
@@ -82,7 +82,7 @@ async function sendFeedback(name, feedback) {
   const decodedToken = JSON.parse(atob(token.split('.')[1]));
   console.log("🪪 Decoded Token Claims:", decodedToken);
 
-    const res = await fetch("https://purenv-narangba-backend-dqcff9bvbzemeyf0.australiaeast-01.azurewebsites.net/api/feedback", {
+    const res = await fetch("https://narangba-backend-ekh7hdhufycja5fp.australiaeast-01.azurewebsites.net/api/feedback", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${token}`,
