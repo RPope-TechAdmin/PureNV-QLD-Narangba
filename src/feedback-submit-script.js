@@ -79,7 +79,7 @@ async function sendFeedback(name, feedback) {
   
   const decodedToken = JSON.parse(atob(token.split('.')[1]));
   console.log("🪪 Decoded Token Claims:", decodedToken);
-  console.log("audience:", decoded.aud);
+  console.log("audience:", decodedToken.aud);
 
     const res = await fetch("https://narangba-backend-ekh7hdhufycja5fp.australiaeast-01.azurewebsites.net/api/feedback", {
       method: "POST",
