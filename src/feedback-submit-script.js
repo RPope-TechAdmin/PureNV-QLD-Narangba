@@ -50,11 +50,6 @@ async function getAccessToken() {
       });
   }
 
-    const token = await getAccessToken();
-    const decoded = JSON.parse(atob(token.split('.')[1]));
-    console.log("audience:", decoded.aud);
-
-
   try {
     const result = await msalInstance.acquireTokenSilent({
       ...loginRequest,
@@ -73,8 +68,6 @@ async function getAccessToken() {
   }
 }
 
-    
-
 // ----- Submit Feedback -----
 async function sendFeedback(name, feedback) {
   const token = await getAccessToken();
@@ -86,6 +79,7 @@ async function sendFeedback(name, feedback) {
   
   const decodedToken = JSON.parse(atob(token.split('.')[1]));
   console.log("🪪 Decoded Token Claims:", decodedToken);
+  console.log("audience:", decoded.aud);
 
     const res = await fetch("https://narangba-backend-ekh7hdhufycja5fp.australiaeast-01.azurewebsites.net/api/feedback", {
       method: "POST",
