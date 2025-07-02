@@ -50,6 +50,11 @@ async function getAccessToken() {
       });
   }
 
+    const token = await getAccessToken();
+    const decoded = JSON.parse(atob(token.split('.')[1]));
+    console.log("audience:", decoded.aud);
+
+
   try {
     const result = await msalInstance.acquireTokenSilent({
       ...loginRequest,
