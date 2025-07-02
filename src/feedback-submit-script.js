@@ -50,6 +50,14 @@ async function getAccessToken() {
       });
   }
 
+  try {
+    const result = await msalInstance.acquireTokenSilent({
+      ...loginRequest,
+      account: accounts[0]
+    });
+    return result.accessToken;
+  } catch (e) {
+    console.warn("Silent failed, trying popup...");
     try {
       const result = await msalInstance.acquireTokenPopup(loginRequest);
       return result.accessToken;
@@ -58,7 +66,7 @@ async function getAccessToken() {
       return null;
     }
   }
-
+}
 
 // ----- Submit Feedback -----
 async function sendFeedback(name, feedback) {
