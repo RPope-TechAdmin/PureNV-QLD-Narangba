@@ -86,6 +86,10 @@ async function sendFeedback(name, feedback) {
     const res = await fetch("https://narangba-backend-narangba-ctfwesf0d7ebcmcv.australiaeast-01.azurewebsites.net/api/feedback", {
       method: "POST",
       headers: {
+        "Access-Control-Allow-Origin": "https://victorious-pond-02e3be310.2.azurestaticapps.net",
+        "Access-Control-Allow-Methods": "POST, OPTIONS, GET",
+        "Access-Control-Allow-Headers": "Authorization, Content-Type, Accept",
+        "Access-Control-Max-Age": "86400",
         "Authorization": `Bearer ${token}`,
         "Content-Type": "application/json",
         "Accept": "application/json"
