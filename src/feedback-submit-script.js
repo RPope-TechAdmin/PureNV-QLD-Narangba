@@ -83,7 +83,7 @@ async function sendFeedback(name, feedback) {
   console.log("Scope:", decodedToken.scp);
   console.log("Token:", token);
 
-    const res = await fetch("https://narangba-backend-ekh7hdhufycja5fp.australiaeast-01.azurewebsites.net/api/feedback", {
+    const res = await fetch("https://narangba-backend-narangba-ctfwesf0d7ebcmcv.australiaeast-01.azurewebsites.net/api/feedback", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${token}`,
