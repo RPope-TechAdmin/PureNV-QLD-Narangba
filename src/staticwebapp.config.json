@@ -2,27 +2,35 @@
   "trailingSlash": "auto",
   "routes": [
     {"route":"/",
-      "allowedRoles": ["authenticated","admin_1"]
+      "allowedRoles": ["technical","higherup","authenticated","admin_1","operator"]
     },
     {
       "route": "index.html*",
-      "allowedRoles": ["authenticated","admin_1"]
+      "allowedRoles": ["technical","higherup","authenticated","admin_1","operator"]
     },
     {
       "route": "Information.html*",
-      "allowedRoles": ["authenticated","admin_1"]
+      "allowedRoles": ["technical","higherup","authenticated","admin_1","operator"]
     },
     {
       "route": "Lab-Data.html*",
-      "allowedRoles": ["technical","higherup","admin_1"]
+      "allowedRoles": ["technical","higherup","authenticated","admin_1"]
     },
     {
       "route": "Contact.html*",
-      "allowedRoles": ["authenticated","admin_1"]
+      "allowedRoles": ["technical","higherup","authenticated","admin_1","operator"]
     },
     {
       "route": "Upload-Lab.html*",
-      "allowedRoles": ["technical","higherup","admin_1"]
+      "allowedRoles": ["technical","higherup","authenticated","admin_1"]
+    },
+    {
+      "route": "Report-Download.html*",
+      "allowedRoles": ["technical","higherup","authenticated","admin_1"]
+    },
+    {
+      "route": "Test-Suite.html*",
+      "allowedRoles": ["technical","higherup","authenticated","admin_1","operator"]
     },
     {
       "route": "/api/*",
