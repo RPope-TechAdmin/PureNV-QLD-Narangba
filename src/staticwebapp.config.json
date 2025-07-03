@@ -14,7 +14,7 @@
     },
     {
       "route": "Lab-Data.html*",
-      "allowedRoles": ["technical","higher-up","admin_1"]
+      "allowedRoles": ["technical","higherup","admin_1"]
     },
     {
       "route": "Contact.html*",
@@ -22,7 +22,7 @@
     },
     {
       "route": "Upload-Lab.html*",
-      "allowedRoles": ["technical","higher-up","admin_1"]
+      "allowedRoles": ["technical","higherup","admin_1"]
     },
     {
       "route": "/api/*",
