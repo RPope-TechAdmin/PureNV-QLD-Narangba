@@ -2,71 +2,92 @@
 const dropZone = document.getElementById('drop-zone');
 const fileInput = document.getElementById('file-input');
 const output = document.getElementById('output');
+const form = document.getElementById('upload-form');
+const warningDiv = document.getElementById('feedback-resp');
+const dropZoneText = document.getElementById('drop-area-text');
+let selectedFile = null;
 
-// Allow clicking the drop zone to open file picker
+// Click-to-open file picker
 dropZone.addEventListener('click', () => fileInput.click());
 
-// Handle drag-over visuals
+// Drag-over effects
 dropZone.addEventListener('dragover', (e) => {
   e.preventDefault();
   dropZone.classList.add('dragover');
 });
-
 dropZone.addEventListener('dragleave', () => {
   dropZone.classList.remove('dragover');
 });
-
-// Handle file drop
 dropZone.addEventListener('drop', (e) => {
   e.preventDefault();
   dropZone.classList.remove('dragover');
-
   const file = e.dataTransfer.files[0];
   if (file) {
-    console.log("File dropped:", file.name);
-    uploadFile(file);
+    selectedFile = file;
+    fileInput.files = e.dataTransfer.files;
+    dropZoneText.textContent = `Selected File: ${file.name}`;
   }
 });
-
-// Handle file selection via Browse button
 fileInput.addEventListener('change', (e) => {
   const file = e.target.files[0];
   if (file) {
-    console.log("File selected via Browse:", file.name);
-    uploadFile(file);
-  } else {
-    console.warn("No file selected.");
+    selectedFile = file;
+    dropZoneText.textContent = `Selected File: ${file.name}`;
   }
 });
 
-async function uploadFile(file) {
+// ✅ Handle form submission
+form.addEventListener('submit', async (event) => {
+  event.preventDefault(); // prevent default form reload
+  
+  if (!warningDiv) {
+    console.error("Element with ID 'feedback-resp' not found in the DOM!");
+    return;
+  }
+
+  const queryType = document.getElementById('query-type').value;
+  warningDiv.textContent = ""; // clear old message
+
+  if (!queryType) {
+    warningDiv.textContent = "⚠️ Please select a query type.";
+    return;
+  }
+
+  if (!selectedFile) {
+    warningDiv.textContent = "⚠️ Please select or drag a PDF file.";
+    return;
+  }
+
   const formData = new FormData();
-  formData.append("file", file); // must match backend's expected key
+  formData.append("file", selectedFile);
+  formData.append("query_type", queryType);
 
   try {
-    const response = await fetch("https://purenv-qld-api-backend-e3arg4gsc4g9fbd4.australiaeast-01.azurewebsites.net/api/get_lab", {
+    const response = await fetch("https://narangba-backend-narangba-ctfwesf0d7ebcmcv.australiaeast-01.azurewebsites.net/api/get_lab", {
       method: "POST",
       body: formData,
-      credentials: "omit",   // prevents auth tokens from SWA
       headers: {
         "Accept": "application/json"
-        // DO NOT manually set Content-Type!
       }
     });
 
     const text = await response.text();
-    console.log("RAW response:", text);
-    console.log("Status:", response.status);
+  let data;
 
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch {
-      throw new Error("Invalid JSON returned:\n" + text);
-    }
-
-    console.log("Success:", data);
-  } catch (err) {
-    console.error("Upload error:", err.message);
+  try {
+    data = text ? JSON.parse(text) : {};
+  } catch (jsonErr) {
+    console.error("❌ JSON parse error:", jsonErr.message);
+    data = { error: "Invalid JSON response", raw: text };
   }
-}
+
+  if (!response.ok) {
+    console.error("🚨 Server error:", data);
+    output.textContent = `Upload failed: ${data?.error || "Unknown error"}`;
+  } else {
+    warningDiv.textContent = "Data uploaded successfully, Thank you!";
+  }
+} catch (err) {
+  console.error("🚨 Upload error:", err.message);
+  output.textContent = "Upload failed. Network or server error.";
+}})

@@ -35,12 +35,22 @@
                 <img src="Assets/images/Horizontal_Decal.png" alt="PureNV-Decal"/>
             </div>
             <h3 class="upload-text">To upload lab data, just upload the file into the box below, then hit the 'Submit' button. Don't worry, I'll take care of the rest.</h3>
-            <div class="drop-area" id="drop-zone">Drop your excel file here, or click to search for it.</div>
-            <input class="uploader" type="file" id="file-input" accept=".xlsx,.xls,.csv,.xls" />
+            <form id="upload-form" class="dropdown">
+                <label for="query-type">Select from the following laboratory data types:</label>
+                <select id="query-type" name="query-type">
+                    <option value="">Please select from the following:</option>
+                    <option value="TW">Trade Waste</option>
+                    <option value="Fix">Fixation</option>
+                </select>
+                <button id="submit" type="submit" class="submit-lab">Submit</button>
+            </form>
+            <div class="drop-area" id="drop-zone">
+                <input class="uploader" type="file" id="file-input" accept=".pdf" />
+                <span id="drop-area-text">Drop your pdf file here, or click to search for it.</span>
+            </div>
             <pre class="output" id="output"></pre>
-
-            <script src="upload-script.js"></script>
-            <div class="feedback-resp">NOTE: Currently, development on the laboratory data submission form has been paused.</div>
+            <div id="feedback-resp" class="feedback-resp"></div>
+            <script src="upload-lab-script.js"></script>
         </div>
         <footer class="footer">
             <p class="footertext">Got a recommendation or a problem that needs solving? Contact us <a class="cont-lk" onclick="href='Contact.html'">here!</a></p>
