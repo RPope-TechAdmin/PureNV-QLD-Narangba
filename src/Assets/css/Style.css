@@ -85,6 +85,7 @@ html,body{
     background-color: #bebebe;
     color:#1b96c8;
     font-weight:600;
+    text-align: left;
     z-index: 1000;
 }
 
@@ -399,3 +400,132 @@ html,body{
     color:#ffffff;
     font-size:2vh;
 }
+
+.fix-suite{
+    display:block;
+    justify-content: space-between;
+    padding:1vh 1vh;
+    text-align: left;
+    width:fit-content;
+    color:#1b96c8;
+    font-size:1.8vh;
+    position:absolute;
+    left:2%;
+}
+
+.tw-suite{
+    display:block;
+    justify-content: space-between;
+    padding:1vh 1vh;
+    text-align: left;
+    width:fit-content;
+    color:#1b96c8;
+    font-size:1.8vh;
+    position:absolute;
+    left:40%;
+    top:24vh;
+}
+
+.sw-suite{
+    display:block;
+    justify-content: space-between;
+    padding:1vh 1vh;
+    text-align: left;
+    width:fit-content;
+    color:#1b96c8;
+    font-size:1.8vh;
+    position:absolute;
+    left:78%;
+    top:24vh;
+}
+
+ .down-title{
+    display:block;
+    justify-content: space-between;
+    padding:1vh 1vh;
+    text-align: left;
+    width:fit-content;
+    color:#1b96c8;
+    font-size:2vh;
+    font-weight:600;
+    text-decoration: none;
+    position:absolute;
+    top: 58%;
+    left:1%;
+ }
+
+  .quote-down{
+    display:block;
+    justify-content: space-between;
+    padding:1vh 1vh;
+    text-align: left;
+    width:fit-content;
+    color:#1b96c8;
+    font-size:1.8vh;
+    text-decoration: underline;
+    position:absolute;
+    top: 65%;
+    left:2%;
+    transition-duration: 0.3s;
+ }
+
+.quote-down:hover{
+    color:blue;
+ }
+
+  .fix-down{
+    display:block;
+    justify-content: space-between;
+    padding:1vh 1vh;
+    text-align: left;
+    width:fit-content;
+    color:#1b96c8;
+    font-size:1.8vh;
+    text-decoration: underline;
+    position:absolute;
+    top: 70%;
+    left:2%;
+    transition-duration: 0.3s;
+ }
+
+ .fix-down:hover{
+    color:blue;
+ }
+
+   .tw-down{
+    display:block;
+    justify-content: space-between;
+    padding:1vh 1vh;
+    text-align: left;
+    width:fit-content;
+    color:#1b96c8;
+    font-size:1.8vh;
+    text-decoration: underline;
+    position:absolute;
+    top: 72.5%;
+    left:2%;
+    transition-duration: 0.3s;
+ }
+
+ .tw-down:hover{
+    color:blue;
+ }
+
+   .sw-down{
+    display:block;
+    justify-content: space-between;
+    padding:1vh 1vh;
+    text-align: left;
+    width:fit-content;
+    color:#1b96c8;
+    font-size:1.8vh;
+    text-decoration: underline;
+    position:absolute;
+    top: 75%;
+    left:2%;
+    transition-duration: 0.3s;
+ }
+
+ .sw-down:hover{
+    color:blue;
+ }
