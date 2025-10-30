@@ -11,7 +11,7 @@ function showSuccess(message) {
 }
 
 async function sendFeedback(name, feedback) {
-  const res = await fetch("https://narangba-backend-narangba-ctfwesf0d7ebcmcv.australiaeast-01.azurewebsites.net/api/feedback", {
+  const res = await fetch("https://narangba-backend-new-d5hne5d0fvaycnfd.australiaeast-01.azurewebsites.net/api/feedback", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
