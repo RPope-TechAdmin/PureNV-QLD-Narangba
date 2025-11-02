@@ -163,6 +163,9 @@ html,body{
     display: flex;
     justify-content: center;
     text-align: center;
+    position:absolute;
+    left:5%;
+    width:90%;
     font-size: 18px;
     color:#1b96c8;
 }
@@ -179,6 +182,7 @@ html,body{
     width:45%;
     position:absolute;
     left:2.5%;
+    top:18%;
  }
 
 .soon-cont{
@@ -192,6 +196,7 @@ html,body{
     width:45%;
     position:absolute;
     right:2.5%;
+    top:18%;
 }
 
 .cont-lk{
